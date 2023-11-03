@@ -1,0 +1,15 @@
+<!-- app/views/customers/index.html.erb -->
+<div class="columns is-multiline">
+  <% @customers.each do |customer| %>
+  <div class="column is-one-quarter">
+    <%= render partial: 'customer',
+               locals: { customer: customer } %>
+  </div>
+  <% end %>
+</div>
+
+<p>
+  <%= link_to 'Alphabetized', customers_alphabetized_path %>
+  <%= link_to 'Missing Email', customers_missing_email_path %>
+</p>
+

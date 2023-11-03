@@ -1,0 +1,15 @@
+<h1 class="title is-3">Alphabetized Customer List</h1>
+
+<div class="columns is-multiline">
+  <% @customers.each do |customer| %>
+    <div class="column is-one-quarter">
+      <%= render partial: 'customer',
+                locals: { customer: customer } %>
+    </div>
+  <% end %>
+</div>
+
+<p>
+  <%= link_to 'Home', '/' %>
+  <%= link_to 'Missing Email', customers_missing_email_path %>
+</p>

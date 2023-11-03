@@ -1,0 +1,23 @@
+<div class="column">
+  <div class="card">
+    <div class="card-content">
+      <p class="title">
+        <% if show_link %>
+          <%= link_to customer.name, customer %>
+        <% else %>
+          <%= customer.name %>
+        <% end %>
+      </p>
+
+      <% if customer.image.present? %>
+        <div class="card-image">
+          <figure class="image">
+          <p>IMAGE! 📸</p>
+            <%= image_tag (customer.image.variant(resize_to_limit: [500, 500])) %>
+            <!--<%= image_tag (horse.image) %>-->
+          </figure>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
